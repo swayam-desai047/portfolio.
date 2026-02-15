@@ -1,0 +1,52 @@
+/* Neo-Brutalism Decorative Shapes */
+.shape {
+    position: absolute;
+    z-index: -1; /* Behind content */
+    pointer-events: none;
+    border: var(--border-width) solid var(--text-color);
+    box-shadow: 4px 4px 0px var(--text-color);
+}
+
+.shape-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--accent-pink);
+}
+
+.shape-rect {
+    width: 120px;
+    height: 60px;
+    background-color: var(--accent-blue);
+    border-radius: 12px; /* Softer corners */
+}
+
+.shape-square {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-yellow);
+    border-radius: 12px;
+}
+
+/* SVG Shapes (Star, Triangle, Burst) */
+.shape-svg {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    filter: drop-shadow(4px 4px 0px var(--text-color));
+}
+
+.shape-svg path, .shape-svg polygon {
+    stroke: var(--text-color);
+    stroke-width: 3px;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Specific Positioning Classes */
+.shape-hero-1 { top: 10%; left: 5%; transform: rotate(-15deg); width: 100px; }
+.shape-hero-2 { bottom: 15%; right: 40%; transform: rotate(10deg); width: 80px; }
+.shape-about-1 { top: -20px; right: 5%; transform: rotate(20deg); width: 90px; }
+.shape-skills-1 { bottom: 10%; left: -20px; transform: rotate(-10deg); }
+.shape-projects-1 { top: 50%; right: -30px; transform: rotate(5deg); }
+
+

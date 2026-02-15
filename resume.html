@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swayam Desai - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #8FDBDB;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border: 4px solid #000000;
+            border-radius: 12px;
+            box-shadow: 12px 12px 0px #000000;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: #ffffff;
+                background-image: none;
+            }
+            .resume-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header .title {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+        
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .contact-info span {
+            color: #666;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .subsection {
+            margin-bottom: 20px;
+        }
+        
+        .subsection h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .subsection .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .subsection .location {
+            font-style: italic;
+        }
+        
+        .subsection ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .subsection ul li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        
+        .subsection ul li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category ul li {
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .skill-category ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+        
+        .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .project-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+        
+        .project-item .tech {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .download-btn {
+            background: #FFE066;
+            color: #000;
+            padding: 12px 30px;
+            border: 4px solid #000;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Archivo Black', sans-serif;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 6px 6px 0px #000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .download-btn:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px #000;
+        }
+        
+        .back-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #FF4D9E;
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            border: 4px solid #000;
+            border-radius: 50px;
+            box-shadow: 6px 6px 0px #000;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .back-link:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px #000;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .certificate-category {
+            margin-bottom: 20px;
+        }
+        
+        .certificate-category strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #000;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #FFE066;
+            font-weight: 700;
+        }
+        
+        .certificate-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .certificate-category ul li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        
+        .certificate-category ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .certificate-category ul li a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .certificate-category ul li a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+        
+        @media print {
+            .certificate-category ul li a {
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print button-container">
+        <button class="download-btn" onclick="window.print()">DOWNLOAD / PRINT RESUME</button>
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <div class="resume-container">
+        <div class="header">
+        <h1>Swayam Desai</h1>
+        <div class="title">AI Enthusiast | UI/UX Designer | Full Stack Developer | Prompt & Context Engineer | Photographer</div>
+        <div class="contact-info">
+            <span><a href="mailto:swayamdesai73@gmail.com">swayamdesai73@gmail.com</a></span>
+            <span>|</span>
+            <span><a href="https://www.linkedin.com/in/swayam-desai024">linkedin.com/in/swayam-desai024</a></span>
+            <span>|</span>
+            <span><a href="https://github.com/swayam-desai047">github.com/swayam-desai047</a></span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Creative and technically skilled B.Sc. IT student completing final semester at Uka Tarsadia University, with acceptance into M.Sc. Computer Science at MIT World Peace University (2026). Google, Oracle, and Gemini AI Certified. AI Enthusiast specializing in Prompt & Context Engineering, Claude Code, and AI Agents. Full Stack Developer passionate about UI/UX Design, Graphic Design, and Photography. Strong background in visual storytelling, web development, and athletic discipline.</p>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+        
+        <div class="subsection">
+            <h3>M.Sc. Computer Science</h3>
+            <div class="meta">
+                <span class="location">MIT World Peace University (MIT-WPU)</span>
+                <span>2026 - 2028 (Expected)</span>
+            </div>
+            <ul>
+                <li>Accepted for 2026 session with focus on Artificial Intelligence</li>
+            </ul>
+        </div>
+        
+        <div class="subsection">
+            <h3>B.Sc. Information Technology</h3>
+            <div class="meta">
+                <span class="location">Uka Tarsadia University</span>
+                <span>2023 - 2026</span>
+            </div>
+            <ul>
+                <li>Currently completing final semester</li>
+                <li>Focus on Full-stack Development and AI Technologies</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Certifications</h2>
+        
+        <div class="certificate-category">
+            <strong>Anthropic</strong>
+            <ul>
+                <li>Introduction to MCP (Model Context Protocol)</li>
+                <li>Claude Code in Action</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-category">
+            <strong>Google</strong>
+            <ul>
+                <li>Ask Questions to Make Data-Driven Decisions</li>
+                <li>Gemini Certified Student</li>
+                <li>Foundations of User Experience (UX) Design</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-category">
+            <strong>Oracle</strong>
+            <ul>
+                <li>Oracle Fusion AI Agent Studio Certified Foundations Associate</li>
+                <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-category">
+            <strong>IBM</strong>
+            <ul>
+                <li>AI Fundamentals: Language and Vision in AI</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-category">
+            <strong>NASA</strong>
+            <ul>
+                <li>International Astronomical Search Collaboration</li>
+            </ul>
+        </div>
+        
+        <div class="certificate-category">
+            <strong>Microsoft</strong>
+            <ul>
+                <li>Fundamentals of Microsoft 365 Generative AI</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Programming & Development</strong>
+                <ul>
+                    <li>HTML5 / CSS3</li>
+                    <li>TypeScript / JavaScript</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>Full Stack Development</li>
+                    <li>Computer Science</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <strong>AI & Emerging Tech</strong>
+                <ul>
+                    <li>AI Enthusiast</li>
+                    <li>Prompt & Context Engineering</li>
+                    <li>AI Agents Development</li>
+                    <li>Claude Code</li>
+                    <li>Machine Learning</li>
+                    <li>AI-Assisted Development</li>
+                    <li>3D Web (Three.js/Spline)</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <strong>Design & Creative</strong>
+                <ul>
+                    <li>UI/UX Designer</li>
+                    <li>Graphic Designer</li>
+                    <li>Figma / Prototyping</li>
+                    <li>Neo-Brutalism</li>
+                    <li>Visual Storytelling</li>
+                    <li>Photography</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <strong>Tools & Platforms</strong>
+                <ul>
+                    <li>GitHub / Git</li>
+                    <li>Cursor Editor</li>
+                    <li>GitHub Copilot</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+        
+        <div class="project-item">
+            <h3>UNIZONE - Full-stack Arcade Management System</h3>
+            <div class="tech">Technologies: PHP, MySQL, HTML, CSS, JavaScript</div>
+            <ul>
+                <li>Developed comprehensive arcade management platform for 5th semester project</li>
+                <li>Implemented user authentication, game management, and real-time interactions</li>
+                <li>Created responsive design with focus on user experience</li>
+                <li>Live deployment at: <a href="http://unizone.xo.je">unizone.xo.je</a></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <h3>Personal Portfolio Website</h3>
+            <div class="tech">Technologies: HTML5, CSS3, JavaScript, Neo-Brutalism Design</div>
+            <ul>
+                <li>Designed and developed bold, expressive portfolio with custom animations</li>
+                <li>Implemented modern design principles with focus on visual impact</li>
+                <li>Showcased projects and skills with responsive, mobile-first approach</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Experience & Leadership</h2>
+        
+        <div class="subsection">
+            <h3>Media & Design Member</h3>
+            <div class="meta">
+                <span class="location">MEXICAN SIZZLERS - College Media Community</span>
+                <span>2022 - Present</span>
+            </div>
+            <ul>
+                <li>Create visual content and storytelling for college events and campaigns</li>
+                <li>Collaborate with team on creative projects and multimedia production</li>
+                <li>Capture and edit photography for official college media</li>
+            </ul>
+        </div>
+        
+        <div class="subsection">
+            <h3>Active Volunteer</h3>
+            <div class="meta">
+                <span class="location">National Service Scheme (NSS)</span>
+                <span>2021 - Present</span>
+            </div>
+            <ul>
+                <li>Participate in community service and social welfare initiatives</li>
+                <li>Contribute to community development programs</li>
+                <li>Organize and support college social responsibility activities</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Athletics & Achievements</h2>
+        <ul>
+            <li><strong>State-level Badminton Player</strong> - Competitive athlete demonstrating discipline, teamwork, and high-performance mindset</li>
+            <li>Developed strong work ethic and ability to excel under pressure through athletic training</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Interests</h2>
+        <p>Photography • 3D Modeling & Web Effects • AI & Machine Learning • Visual Design • Badminton • Community Service</p>
+    </div>
+    </div>
+
+    <div class="no-print button-container" style="margin-top: 30px;">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swayam Desai | AI Enthusiast | UI/UX Designer | Full Stack Developer | Photographer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shapes.css">
+    <style>
+        /* Certificate Preview Styles */
+        .cert-preview {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70vw;
+            max-width: 900px;
+            height: 80vh;
+            background: white;
+            border: 6px solid #000;
+            border-radius: 12px;
+            box-shadow: 12px 12px 0px #000;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .cert-preview.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .cert-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .cert-preview-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .cert-preview-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .certificate-category ul li a {
+            position: relative;
+        }
+        
+        .cert-link:hover {
+            opacity: 0.7 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SWAYAM.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="resume.html" style="background: var(--accent-yellow); padding: 0.5rem 1rem; border-radius: 20px; border: 2px solid var(--text-color);">Resume</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <!-- Decorative Shapes -->
+            <!-- Pink Geometric Shapes -->
+            <div style="position: absolute; top: 0; left: 0; width: 300px; height: 300px; background: #FF4D9E; clip-path: polygon(50% 0%, 100% 50%, 50% 100%); z-index: -1;"></div>
+            <div style="position: absolute; top: 0; right: 0; width: 400px; height: 250px; background: #FF4D9E; clip-path: polygon(0% 50%, 100% 0%, 100% 100%); z-index: -1;"></div>
+            <div style="position: absolute; bottom: 0; left: 20%; width: 200px; height: 200px; background: #FF4D9E; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); z-index: -1;"></div>
+
+            <div class="hero-content">
+                <h1 class="glitch-text">SWAYAM<br><span>DESAI.</span></h1>
+                <p class="hero-subtitle">AI ENTHUSIAST | UI/UX DESIGNER | FULL STACK DEVELOPER</p>
+                <div class="role-badges" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; justify-content: center;">
+                    <span class="badge" style="background: var(--accent-yellow); padding: 0.5rem 1rem; border: 2px solid var(--text-color); border-radius: 20px; font-weight: 700; font-size: 0.85rem; transition: all 0.3s ease; cursor: pointer;">Prompt & Context Engineer</span>
+                    <span class="badge" style="background: var(--accent-pink); padding: 0.5rem 1rem; border: 2px solid var(--text-color); border-radius: 20px; font-weight: 700; font-size: 0.85rem; transition: all 0.3s ease; cursor: pointer;">Claude Code</span>
+                    <span class="badge" style="background: var(--accent-green); padding: 0.5rem 1rem; border: 2px solid var(--text-color); border-radius: 20px; font-weight: 700; font-size: 0.85rem; transition: all 0.3s ease; cursor: pointer;">AI Agents</span>
+                    <span class="badge" style="background: var(--accent-purple); padding: 0.5rem 1rem; border: 2px solid var(--text-color); border-radius: 20px; font-weight: 700; font-size: 0.85rem; transition: all 0.3s ease; cursor: pointer;">Graphic Designer</span>
+                    <span class="badge" style="background: var(--accent-yellow); padding: 0.5rem 1rem; border: 2px solid var(--text-color); border-radius: 20px; font-weight: 700; font-size: 0.85rem; transition: all 0.3s ease; cursor: pointer;">Photographer</span>
+                </div>
+                <div class="cta-group">
+                    <a href="#projects" class="btn btn-primary">VIEW WORK</a>
+                    <a href="resume.html" class="btn btn-secondary">RESUME</a>
+                </div>
+            </div>
+            <div class="hero-visuals">
+                <div class="neo-avatar-container">
+                    <div class="avatar-bg-shape"></div>
+                    
+                    <!-- Floating Icons -->
+                    <div class="float-icon icon-code">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <div class="float-icon icon-design">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"></path></svg>
+                    </div>
+
+                    <!-- Avatar Image -->
+                    <img src="avatar.png" alt="Swayam Desai" class="avatar-image" style="width: 100%; height: 100%; object-fit: contain; position: relative; z-index: 2;">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section-container" style="position: relative;">
+            <svg class="shape-svg shape-about-1" viewBox="0 0 100 100" style="width: 80px; height: 80px; top: 40px; right: 10%;">
+                <polygon fill="#A855F7" points="50 15 100 100 0 100"></polygon>
+            </svg>
+            <h2 class="section-title">WHO AM I?</h2>
+            <div class="about-content">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">I DESIGN IDEAS. I TRAIN INTELLIGENCE. I BUILD WHAT’S NEXT.</h3>
+                
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;">I'm Swayam Desai, currently completing my final semester of B.Sc. IT at Uka Tarsadia University. I've been accepted into the M.Sc. Computer Science program at MIT World Peace University (MIT-WPU) for the 2026 session, where I'll continue my journey in AI and Full-stack development.</p>
+                
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;">My work lives at the intersection of design and AI — as a UI/UX Designer, Graphic Designer, and Prompt & Context Engineer, I experiment with layouts, interfaces, and AI-driven solutions that feel bold, expressive, and intentional. I specialize in Claude Code, AI Agents, and bridging the gap between Full Stack Development and creative design.</p>
+                
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;">I work with HTML, CSS, TypeScript, Python, and MySQL for Full Stack Development, while using 3D web technologies (Three.js/Spline) and my Sony a6100 for photography. Every project I touch is an opportunity to learn, refine, and push boundaries.</p>
+                
+                <p style="margin-bottom: 2rem; font-size: 1.1rem;">I'm <strong>Google AI Certified, Oracle AI Certified, and Gemini Certified Student</strong>, building intelligent systems that don't just function — they communicate, adapt, and inspire.</p>
+
+                <div class="personality-box" style="border: 4px solid var(--text-color); padding: 2rem; margin-bottom: 2rem; background: rgba(255,255,255,0.3);">
+                    <h3 style="margin-bottom: 1rem;">⚡ PERSONALITY SNAPSHOT</h3>
+                    <ul style="font-weight: bold; list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">► Playful thinker</li>
+                        <li style="margin-bottom: 0.5rem;">► Design-first mindset</li>
+                        <li style="margin-bottom: 0.5rem;">► AI-curious, future-driven</li>
+                        <li style="margin-bottom: 0.5rem;">► Learning relentlessly</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--text-color); color: var(--bg-color); padding: 1rem; display: inline-block; transform: rotate(-1deg);">
+                    <h3 style="margin: 0; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M11 16V11.5L7 13 6.5 12.5L11 9.7V7C8.7 7 4 8.1 4 10.4V11H8V22H11V18H13V22H16V11H20V10.4C20 8.1 15.3 7 13 7V9.7L17.5 12.5L17 13L13 11.5V16H11Z" fill="currentColor"/>
+                        </svg>
+                        DESIGNING TODAY. TRAINING TOMORROW.
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section-container" style="position: relative;">
+            <div class="shape shape-circle shape-skills-1" style="position: absolute; top: 50px; left: 5%;"></div>
+            <h2 class="section-title">THE ARSENAL</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>CORE TECH</h3>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>TypeScript / JavaScript</li>
+                        <li>Python</li>
+                        <li>MySQL / Databases</li>
+                        <li><strong>► Full Stack Development</strong></li>
+                        <li><strong>► Computer Science</strong></li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>AI & ENGINEERING</h3>
+                    <ul>
+                        <li><strong>► AI Enthusiast</strong></li>
+                        <li><strong>► Prompt & Context Engineer</strong></li>
+                        <li><strong>► AI Agents</strong></li>
+                        <li><strong>► Claude Code</strong></li>
+                        <li><strong>► Google AI Certified</strong></li>
+                        <li><strong>► Oracle AI Certified</strong></li>
+                        <li><strong>► Gemini Certified Student</strong></li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>DESIGN & CREATIVE</h3>
+                    <ul>
+                        <li><strong>► UI/UX Designer</strong></li>
+                        <li><strong>► Graphic Designer</strong></li>
+                        <li>Figma / Prototyping</li>
+                        <li>Neo-Brutalism</li>
+                        <li>Visual Storytelling</li>
+                        <li>► 3D Web (Three.js/Spline)</li>
+                        <li><strong>► Photographer (Sony a6100)</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-container" style="position: relative;">
+            <div class="shape shape-rect shape-projects-1" style="position: absolute; top: 100px; right: 5%;"></div>
+            <h2 class="section-title">SELECTED WORKS</h2>
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-info">
+                        <h3>UNIZONE</h3>
+                        <p>Full-stack Arcade Management System developed for my 5th semester. A comprehensive digital platform built for connection and utility, featuring game management, user authentication, and real-time interactions.</p>
+                        <div class="tags">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="http://unizone.xo.je" target="_blank" class="btn btn-small">VIEW PROJECT</a>
+                    </div>
+                    <div class="project-image">
+                        <img src="unizone.png" alt="Unizone Website Preview">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section-container" style="position: relative;">
+            <div class="shape shape-circle shape-skills-1" style="position: absolute; top: 50px; right: 5%;"></div>
+            <h2 class="section-title">CERTIFICATIONS</h2>
+            <div class="about-content">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center;">VERIFIED CREDENTIALS FROM LEADING TECH COMPANIES</h3>
+                
+                <div class="certificates-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;">
+                    <!-- Anthropic -->
+                    <div class="certificate-company" style="background: var(--accent-purple); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">ANTHROPIC</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Antrophic.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Introduction to MCP(Model Context Protocol)</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Claude Code in Action Certificate.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Claude Code in Action</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Google -->
+                    <div class="certificate-company" style="background: var(--accent-yellow); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">GOOGLE</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Coursera Google.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Ask Questions to Make Data-Driven Decisions</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Gemini Certified Student.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Gemini Certified Student</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Coursera .pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Foundations of User Experience (UX) Design</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Oracle -->
+                    <div class="certificate-company" style="background: var(--accent-pink); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">ORACLE</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Oracle.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Oracle Fusion AI Agent Studio Certified Foundations Associate</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Oracle2.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- IBM -->
+                    <div class="certificate-company" style="background: var(--accent-green); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">IBM</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/IBM Ai fundamentals.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">AI Fundamentals: Language and Vision in AI</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- NASA -->
+                    <div class="certificate-company" style="background: var(--accent-yellow); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">NASA</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/certificate(2).pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">International Astronomial Search Collaboration</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Microsoft -->
+                    <div class="certificate-company" style="background: var(--accent-purple); padding: 2rem; border: 4px solid var(--text-color); border-radius: 12px; box-shadow: 8px 8px 0 var(--text-color);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">MICROSOFT</h3>
+                        <ul style="list-style: disc; padding-left: 1.5rem;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" data-cert="certificates/Microsoft.pdf" class="cert-link" style="color: var(--text-color); text-decoration: none; font-weight: 600; transition: opacity 0.2s; cursor: pointer;">Fundamentals of Microsoft 365 Generative AI</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; text-align: center;">
+                    <div style="background: var(--text-color); color: var(--bg-color); padding: 1.5rem; display: inline-block; transform: rotate(-1deg); border-radius: 20px;">
+                        <h3 style="margin: 0; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3M18.82 9L12 12.72L5.18 9L12 5.28L18.82 9M17 16L12 18.72L7 16V12.27L12 15L17 12.27V16Z" fill="currentColor"/>
+                            </svg>
+                            CERTIFIED. VERIFIED. READY TO INNOVATE.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beyond the Code Section -->
+        <section id="experience" class="section-container" style="position: relative;">
+            <div class="shape shape-rect shape-projects-1" style="position: absolute; bottom: 100px; left: 5%;"></div>
+            <h2 class="section-title">BEYOND THE CODE</h2>
+            <div class="about-content">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">WHERE CREATIVITY, SERVICE & SPORT MEET TECHNOLOGY.</h3>
+                
+                <div class="experience-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="experience-card" style="background: var(--accent-yellow);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H7L9 2H15L17 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4M12 7C9.24 7 7 9.24 7 12S9.24 17 12 17 17 14.76 17 12 14.76 7 12 7M12 9C13.66 9 15 10.34 15 12S13.66 15 12 15 9 13.66 9 12 10.34 9 12 9Z" fill="currentColor"/>
+                            </svg>
+                            MEDIA & DESIGN
+                        </h3>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Member of MEXICAN SIZZLERS</p>
+                        <p>College media community focused on visual storytelling and content creation. Capturing moments and crafting narratives through design.</p>
+                    </div>
+                    
+                    <div class="experience-card" style="background: var(--accent-green);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 8C19.5 8 18.7 9.4 19 10.5V15.5C18.7 16.6 19.5 18 21 18H22V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V18H3C4.5 18 5.3 16.6 5 15.5V10.5C5.3 9.4 4.5 8 3 8H2V4C2 2.9 2.9 2 4 2H20C21.1 2 22 2.9 22 4V8H21M7 11H17V15H7V11Z" fill="currentColor"/>
+                            </svg>
+                            COMMUNITY SERVICE
+                        </h3>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">Active NSS Member</p>
+                        <p>National Service Scheme volunteer at college, contributing to social welfare and community development initiatives.</p>
+                    </div>
+                    
+                    <div class="experience-card" style="background: var(--accent-purple);">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.2 2H19.5C18.57 2 17.8 2.66 17.69 3.58L17 9H23L22.31 3.58C22.2 2.66 21.43 2 20.5 2H20.2M20.62 10H17.38L17.05 13.32C17 14.32 16.19 15.13 15.2 15.19L14.4 15.26C13.5 15.31 12.61 15 11.93 14.39L11.63 14.12C11.5 14 11.5 13.8 11.64 13.67L12 13.29C12.5 12.79 13.31 12.79 13.81 13.29L14.27 13.75C14.66 14.13 15.29 14.13 15.67 13.75C16.06 13.36 16.06 12.73 15.67 12.34L14.39 11.06C13.26 9.93 11.62 9.42 10.03 9.7L7.13 10.19C6.5 10.29 6 10.82 6 11.46V12.5C6 13.33 6.67 14 7.5 14H8V21C8 21.55 8.45 22 9 22H10C10.55 22 11 21.55 11 21V14.69C11.85 15.07 12.8 15.15 13.7 14.92L14.5 14.74C15.42 14.54 16.23 14.03 16.81 13.3L17 13H20.1C20.76 13 21.37 12.59 21.64 11.97L23 9L20.62 10M4 11H2V9H4V11M2 15H4V13H2V15Z" fill="currentColor"/>
+                            </svg>
+                            ATHLETICS
+                        </h3>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem;">State-level Badminton Player</p>
+                        <p>Competitive athlete showcasing discipline, high-performance teamwork, and the drive to excel under pressure.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <div style="background: var(--text-color); color: var(--bg-color); padding: 1.5rem; display: inline-block; transform: rotate(1deg); border-radius: 20px;">
+                        <h3 style="margin: 0; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2M12 4L20 12L12 20L4 12L12 4M11 6V11H6V13H11V18H13V13H18V11H13V6H11Z" fill="currentColor"/>
+                            </svg>
+                            NOT JUST A DEVELOPER — A MULTIDIMENSIONAL CREATOR.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <h2 class="big-statement">"WHERE AI MEETS <span class="highlight">HUMAN CREATIVITY.</span><br>I BRIDGE THE GAP BETWEEN <span class="highlight">TECHNOLOGY AND INNOVATION.</span>"</h2>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="section-container">
+            <h2 class="section-title">TIMELINE</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2021</div>
+                    <div class="desc">Started B.Sc. IT Journey at Uka Tarsadia University</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2023</div>
+                    <div class="desc">Mastered Full Stack Development</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2025</div>
+                    <div class="desc">Google, Oracle & Gemini AI Certifications</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2026</div>
+                    <div class="desc">Starting M.Sc. Computer Science at MIT-WPU</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-container contact-section">
+            <h2 class="section-title">LET'S CONNECT</h2>
+            
+            <div style="position: relative; max-width: 1320px; margin: 0 auto;">
+                <!-- Big Bold Header -->
+                <div style="text-align: center; margin-bottom: 2.2rem;">
+                    <div style="background: var(--accent-pink); display: inline-block; padding: 1.3rem 2.2rem; border: 4px solid var(--text-color); transform: rotate(-1deg); box-shadow: 9px 9px 0 var(--text-color); margin-bottom: 1.1rem;">
+                        <h3 style="margin: 0; font-size: 1.75rem; line-height: 1.2;">GOT AN IDEA? LET'S BUILD IT!</h3>
+                    </div>
+                    <p style="font-size: 1.1rem; font-weight: 700; margin-top: 1.65rem; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.13 22.19L11.5 18.36C13.07 17.78 14.54 17 15.9 16.09L13.13 22.19M5.64 12.5L1.81 10.87L7.91 8.1C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39C21.61 2.39 16.66 .269 11 5.93C8.81 8.12 7.5 10.53 6.65 12.64C6.37 13.39 6.56 14.21 7.11 14.77L9.24 16.89C9.79 17.45 10.61 17.63 11.36 17.35C13.5 16.53 15.88 15.19 18.07 13C23.73 7.34 21.61 2.39 21.61 2.39M14.54 9.46C13.76 8.68 13.76 7.41 14.54 6.63S16.59 5.85 17.37 6.63C18.14 7.41 18.15 8.68 17.37 9.46C16.59 10.24 15.32 10.24 14.54 9.46M8.88 16.53L7.47 15.12L8.88 16.53M6.24 22L9.88 18.36C9.54 18.27 9.21 18.12 8.91 17.91L4.83 22H6.24M2 22H3.41L8.18 17.24L6.76 15.83L2 20.59V22M2 19.17L6.09 15.09C5.88 14.79 5.73 14.47 5.64 14.12L2 17.76V19.17Z" fill="currentColor"/>
+                        </svg>
+                        OPEN FOR COLLABORATION, INTERNSHIPS & FREELANCE
+                    </p>
+                </div>
+
+                <!-- Contact Methods Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.65rem; margin-bottom: 2.75rem;">
+                    <!-- Mega Email Card -->
+                    <div style="background: var(--accent-yellow); padding: 2.2rem 1.65rem; border: 4px solid var(--text-color); border-radius: 18px; box-shadow: 9px 9px 0 var(--text-color); transform: rotate(1deg); transition: all 0.3s;">
+                        <div style="text-align: center; margin-bottom: 0.9rem;">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#fff"/>
+                                <path d="M22 6L12 13L2 6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 style="text-align: center; font-size: 1.45rem; margin-bottom: 0.9rem;">EMAIL ME</h3>
+                        <p style="text-align: center; font-weight: 700; font-size: 1rem; margin-bottom: 1.1rem; word-break: break-all;">swayamdesai73@gmail.com</p>
+                        <a href="mailto:swayamdesai73@gmail.com" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 1.05rem; padding: 1rem;">DROP A MESSAGE</a>
+                    </div>
+                    
+                    <!-- Social Stack -->
+                    <div style="display: flex; flex-direction: column; gap: 1.1rem; transform: rotate(-1deg);">
+                        <!-- LinkedIn -->
+                        <div style="background: #0077B5; padding: 1.3rem; border: 4px solid var(--text-color); border-radius: 15px; box-shadow: 6.5px 6.5px 0 var(--text-color); display: flex; align-items: center; gap: 1.1rem; transition: all 0.3s;">
+                            <div style="min-width: 42px;">
+                                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="4" fill="white"/>
+                                    <path d="M7.5 9H5V19H7.5V9Z" fill="#0077B5"/>
+                                    <path d="M6.25 5C5.56 5 5 5.56 5 6.25C5 6.94 5.56 7.5 6.25 7.5C6.94 7.5 7.5 6.94 7.5 6.25C7.5 5.56 6.94 5 6.25 5Z" fill="#0077B5"/>
+                                    <path d="M19 12.5C19 10.29 17.71 9 15.5 9C14.25 9 13.25 9.59 12.75 10.39V9H10.25V19H12.75V13.25C12.75 12.42 13.42 11.75 14.25 11.75C15.08 11.75 15.75 12.42 15.75 13.25V19H18.25V12.5H19Z" fill="#0077B5"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.2rem; color: white;">LINKEDIN</h3>
+                                <p style="font-size: 0.83rem; margin-bottom: 0; color: white;">Professional networking</p>
+                            </div>
+                            <a href="https://www.linkedin.com/in/swayam-desai024" target="_blank" style="background: white; color: #0077B5; padding: 0.65rem 1.1rem; border: 3px solid var(--text-color); border-radius: 11px; font-weight: 700; font-family: var(--font-heading); font-size: 0.88rem; transition: all 0.2s;">CONNECT</a>
+                        </div>
+                        
+                        <!-- GitHub -->
+                        <div style="background: var(--text-color); padding: 1.3rem; border: 4px solid var(--text-color); border-radius: 15px; box-shadow: 6.5px 6.5px 0 var(--accent-purple); display: flex; align-items: center; gap: 1.1rem; transition: all 0.3s;">
+                            <div style="min-width: 42px;">
+                                <svg width="42" height="42" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.865 20.17 8.839 21.49C9.339 21.58 9.52 21.27 9.52 21C9.52 20.77 9.511 20.14 9.506 19.31C6.726 19.91 6.139 17.77 6.139 17.77C5.685 16.61 5.029 16.3 5.029 16.3C4.121 15.68 5.098 15.69 5.098 15.69C6.101 15.76 6.629 16.73 6.629 16.73C7.521 18.26 8.97 17.82 9.539 17.56C9.631 16.91 9.889 16.47 10.175 16.22C7.955 15.97 5.62 15.11 5.62 11.37C5.62 10.28 6.01 9.39 6.649 8.69C6.546 8.44 6.203 7.42 6.747 6.05C6.747 6.05 7.586 5.77 9.496 7.03C10.294 6.81 11.147 6.7 12 6.696C12.853 6.7 13.706 6.81 14.504 7.03C16.414 5.77 17.253 6.05 17.253 6.05C17.797 7.42 17.454 8.44 17.351 8.69C17.99 9.39 18.38 10.28 18.38 11.37C18.38 15.12 16.041 15.966 13.813 16.213C14.172 16.53 14.494 17.16 14.494 18.13C14.494 19.52 14.481 20.64 14.481 21C14.481 21.27 14.661 21.585 15.169 21.489C19.138 20.166 22 16.418 22 12C22 6.477 17.523 2 12 2Z"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.2rem; color: white;">GITHUB</h3>
+                                <p style="font-size: 0.83rem; margin-bottom: 0; color: white;">View my repositories</p>
+                            </div>
+                            <a href="https://github.com/swayam-desai047" target="_blank" style="background: var(--accent-green); color: var(--text-color); padding: 0.65rem 1.1rem; border: 3px solid var(--text-color); border-radius: 11px; font-weight: 700; font-family: var(--font-heading); font-size: 0.88rem; transition: all 0.2s;">EXPLORE</a>
+                        </div>
+                        
+                        <!-- Instagram -->
+                        <div style="background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); padding: 1.3rem; border: 4px solid var(--text-color); border-radius: 15px; box-shadow: 6.5px 6.5px 0 var(--text-color); display: flex; align-items: center; gap: 1.1rem; transition: all 0.3s;">
+                            <div style="min-width: 42px;">
+                                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" fill="none"/>
+                                    <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2" fill="none"/>
+                                    <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.2rem; color: white;">INSTAGRAM</h3>
+                                <p style="font-size: 0.83rem; margin-bottom: 0; color: white;">Photography & more</p>
+                            </div>
+                            <a href="https://instagram.com/swayam__desai" target="_blank" style="background: white; color: #DD2A7B; padding: 0.65rem 1.1rem; border: 3px solid var(--text-color); border-radius: 11px; font-weight: 700; font-family: var(--font-heading); font-size: 0.88rem; transition: all 0.2s;">FOLLOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form - Bold Design -->
+                <div style="background: var(--accent-cyan); padding: 2.2rem; border: 5px solid var(--text-color); border-radius: 22px; box-shadow: 11px 11px 0 var(--text-color); margin: 2.75rem 0; transform: rotate(-1deg);">
+                    <div style="transform: rotate(1deg);">
+                        <div style="text-align: center; margin-bottom: 1.65rem;">
+                            <div style="display: inline-flex; align-items: center; gap: 0.8rem; background: var(--text-color); color: var(--accent-yellow); padding: 0.9rem 1.65rem; font-size: 1.45rem; font-weight: 700; border-radius: 13px; font-family: var(--font-heading);">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#FFE066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <path d="M22 6L12 13L2 6" stroke="#FFE066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                QUICK MESSAGE FORM
+                            </div>
+                        </div>
+                        
+                        <form action="https://formspree.io/f/xqedpdok" method="POST" class="contact-form" id="contactForm" style="max-width: 770px; margin: 0 auto;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.1rem;">
+                                <div class="form-group">
+                                    <label for="name" style="display: block; font-weight: 700; margin-bottom: 0.55rem; font-size: 1rem; text-transform: uppercase;">Your Name *</label>
+                                    <input type="text" id="name" name="name" required 
+                                           style="width: 100%; padding: 0.83rem; border: 3px solid var(--text-color); border-radius: 11px; font-family: var(--font-body); font-size: 1.05rem; background: white; transition: all 0.2s; font-weight: 600;">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" style="display: block; font-weight: 700; margin-bottom: 0.55rem; font-size: 1rem; text-transform: uppercase;">Your Email *</label>
+                                    <input type="email" id="email" name="email" required 
+                                           style="width: 100%; padding: 0.83rem; border: 3px solid var(--text-color); border-radius: 11px; font-family: var(--font-body); font-size: 1.05rem; background: white; transition: all 0.2s; font-weight: 600;">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 1.1rem;">
+                                <label for="subject" style="display: block; font-weight: 700; margin-bottom: 0.55rem; font-size: 1rem; text-transform: uppercase;">Subject</label>
+                                <input type="text" id="subject" name="subject" 
+                                       style="width: 100%; padding: 0.83rem; border: 3px solid var(--text-color); border-radius: 11px; font-family: var(--font-body); font-size: 1.05rem; background: white; transition: all 0.2s; font-weight: 600;">
+                            </div>
+                            
+                            <div class="form-group" style="margin-bottom: 1.65rem;">
+                                <label for="message" style="display: block; font-weight: 700; margin-bottom: 0.55rem; font-size: 1rem; text-transform: uppercase;">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          style="width: 100%; padding: 0.83rem; border: 3px solid var(--text-color); border-radius: 11px; font-family: var(--font-body); font-size: 1.05rem; resize: vertical; background: white; transition: all 0.2s; font-weight: 600;"></textarea>
+                            </div>
+                            
+                            <button type="submit" style="width: 100%; padding: 1.1rem; background: var(--accent-pink); border: 4px solid var(--text-color); border-radius: 13px; font-family: var(--font-heading); font-size: 1.2rem; cursor: pointer; box-shadow: 6.5px 6.5px 0 var(--text-color); transition: all 0.2s; color: var(--text-color); display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <span>SEND MESSAGE</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                </svg>
+                            </button>
+                            
+                            <div id="formStatus" style="margin-top: 1.1rem; text-align: center; font-weight: 700; display: none; font-size: 1.05rem;"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <div style="text-align: center; margin-top: 2.75rem;">
+                    <a href="resume.html" style="display: inline-flex; align-items: center; gap: 0.6rem; background: var(--accent-purple); color: var(--text-color); padding: 1.1rem 2.2rem; border: 4px solid var(--text-color); border-radius: 18px; box-shadow: 9px 9px 0 var(--text-color); font-family: var(--font-heading); font-size: 1.2rem; transform: rotate(1deg); transition: all 0.3s;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        CHECK OUT MY RESUME
+                    </a>
+                </div>
+            </div>
+            
+            <footer class="footer">
+                <p>© 2025 SWAYAM DESAI. ALL RIGHTS RESERVED.</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Certificate Preview Container -->
+    <div class="cert-preview-overlay" id="certOverlay"></div>
+    <div class="cert-preview" id="certPreview">
+        <iframe id="certFrame" src=""></iframe>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Certificate Preview Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const preview = document.getElementById('certPreview');
+            const overlay = document.getElementById('certOverlay');
+            const iframe = document.getElementById('certFrame');
+            let hideTimeout;
+            let currentLink = null;
+            let loadedCertUrl = ''; // Track what's actually loaded in iframe
+            let activeElement = null; // Track which element is currently active
+            let isPreviewActive = false; // Track if preview is currently showing
+            
+            // Handle clicks on certificate links
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('.cert-link');
+                if (link) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const certUrl = link.getAttribute('data-cert');
+                    if (certUrl) {
+                        window.open(certUrl, '_blank');
+                    }
+                    return false;
+                }
+            });
+            
+            // Handle mouseenter on certificate links and their parent containers
+            document.querySelectorAll('.cert-link').forEach(link => {
+                const parentLi = link.closest('li');
+                let enterTimeout = null;
+                
+                const showPreview = function(certUrl) {
+                    if (!certUrl) return;
+                    
+                    // Only load iframe if it's a different URL than what's currently loaded
+                    if (certUrl !== loadedCertUrl) {
+                        iframe.src = certUrl;
+                        loadedCertUrl = certUrl;
+                    }
+                    
+                    // Always show preview
+                    preview.classList.add('show');
+                    overlay.classList.add('show');
+                    isPreviewActive = true;
+                };
+                
+                const handleEnter = function(e) {
+                    // If this element is already active, don't re-trigger
+                    if (activeElement === (parentLi || link)) {
+                        return;
+                    }
+                    
+                    // Set this as the active element
+                    activeElement = parentLi || link;
+                    
+                    clearTimeout(hideTimeout);
+                    clearTimeout(enterTimeout);
+                    
+                    const certUrl = link.getAttribute('data-cert');
+                    currentLink = link;
+                    
+                    if (certUrl) {
+                        // Longer delay to prevent accidental triggers on edge items
+                        enterTimeout = setTimeout(() => {
+                            if (currentLink === link && activeElement === (parentLi || link)) {
+                                showPreview(certUrl);
+                            }
+                        }, 200);
+                    }
+                };
+                
+                const handleLeave = function(e) {
+                    // Only trigger leave if mouse actually left the list item
+                    const relatedTarget = e.relatedTarget;
+                    if (parentLi && parentLi.contains(relatedTarget)) {
+                        return; // Mouse is still within the same list item
+                    }
+                    
+                    // Clear active element only if leaving the current one
+                    if (activeElement === (parentLi || link)) {
+                        activeElement = null;
+                    }
+                    
+                    clearTimeout(enterTimeout);
+                    currentLink = null;
+                    
+                    hideTimeout = setTimeout(() => {
+                        if (!preview.matches(':hover') && !currentLink) {
+                            preview.classList.remove('show');
+                            overlay.classList.remove('show');
+                            isPreviewActive = false;
+                            // Keep iframe loaded for faster re-display
+                        }
+                    }, 150);
+                };
+                
+                // Attach listeners to parent list item for better stability
+                if (parentLi) {
+                    parentLi.addEventListener('mouseenter', handleEnter, false);
+                    parentLi.addEventListener('mouseleave', handleLeave, false);
+                } else {
+                    link.addEventListener('mouseenter', handleEnter, false);
+                    link.addEventListener('mouseleave', handleLeave, false);
+                }
+            });
+            
+            // Keep preview open when hovering over it
+            preview.addEventListener('mouseenter', function() {
+                clearTimeout(hideTimeout);
+            });
+            
+            preview.addEventListener('mouseleave', function() {
+                currentLink = null;
+                this.classList.remove('show');
+                overlay.classList.remove('show');
+                setTimeout(() => {
+                    if (!this.classList.contains('show')) {
+                        iframe.src = '';
+                        currentCertUrl = null;
+                    }
+                }, 300);
+            });
+            
+            // Close preview when clicking overlay
+            overlay.addEventListener('click', function() {
+                currentLink = null;
+                preview.classList.remove('show');
+                overlay.classList.remove('show');
+                setTimeout(() => {
+                    iframe.src = '';
+                    currentCertUrl = null;
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
